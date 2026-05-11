@@ -1,0 +1,18 @@
+# Backend / données sensibles
+data/
+uploads/
+__pycache__/
+*.pyc
+*.pyo
+
+# Outils internes
+.agents/
+skills-lock.json
+
+# Fichiers volumineux / locaux
+*.mp4
+*.mov
+
+# OS
+.DS_Store
+Thumbs.db

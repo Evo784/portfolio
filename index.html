@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Edwyn Houillier — Développeur web. Systèmes temps réel, data, performance. Portfolio.">
+  <meta name="theme-color" content="#06060f">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23c9a227'>E</text></svg>">
+  <title>Edwyn Houillier — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,700;9..144,0,900;9..144,1,400&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="bg-ambient" id="bgAmbient"></div>
+  <div class="grid-overlay"></div>
+
+  <header class="site-header">
+    <a href="#" class="header-logo">Edwyn<span class="accent">.</span></a>
+    <nav class="header-nav">
+      <a href="#skills">Compétences</a>
+      <a href="#about">À propos</a>
+      <a href="#projects">Projets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- ══ HERO ═════════════════════════════════════════════ -->
+    <section class="hero">
+      <svg class="hero-grid" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="gridFade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="white" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="white" stop-opacity="0"/>
+          </linearGradient>
+          <mask id="gridMask">
+            <rect width="800" height="600" fill="url(#gridFade)"/>
+          </mask>
+        </defs>
+        <g mask="url(#gridMask)" opacity="0.05">
+          <line x1="100" y1="0" x2="100" y2="600" stroke="#c9a227" stroke-width="0.5"/>
+          <line x1="200" y1="0" x2="200" y2="600" stroke="#c9a227" stroke-width="0.5"/>
+          <line x1="300" y1="0" x2="300" y2="600" stroke="#c9a227" stroke-width="0.5"/>
+          <line x1="400" y1="0" x2="400" y2="600" stroke="#c9a227" stroke-width="0.5"/>
+          <line x1="500" y1="0" x2="500" y2="600" stroke="#c9a227" stroke-width="0.5"/>
+          <line x1="600" y1="0" x2="600" y2="600" stroke="#c9a227" stroke-width="0.5"/>
+          <line x1="700" y1="0" x2="700" y2="600" stroke="#c9a227" stroke-width="0.5"/>
+          <line x1="0" y1="150" x2="800" y2="150" stroke="#c9a227" stroke-width="0.5"/>
+          <line x1="0" y1="300" x2="800" y2="300" stroke="#c9a227" stroke-width="0.5"/>
+          <line x1="0" y1="450" x2="800" y2="450" stroke="#c9a227" stroke-width="0.5"/>
+        </g>
+      </svg>
+
+      <div class="hero-content">
+        <div class="hero-top reveal">
+          <span class="hero-badge">
+            <span class="badge-dot"></span>Disponible alternance 2026
+          </span>
+          <div class="hero-stats">
+            <div class="hero-stat"><span class="hs-num">04</span><span class="hs-label">Projets</span></div>
+            <div class="hero-stat"><span class="hs-num">03</span><span class="hs-label">Clients</span></div>
+          </div>
+        </div>
+        <h1 class="hero-display reveal delay-1">
+          <span class="hd-line">Edwyn</span>
+          <span class="hd-line hd-accent">— Houillier</span>
+        </h1>
+        <div class="hero-bottom reveal delay-2">
+          <p class="hero-role">Développeur — <span class="accent-italic">Temps réel</span>,<br>Data, Performance.</p>
+          <div class="hero-cta">
+            <button type="button" class="btn btn-primary" id="contactBtn">Me contacter</button>
+            <a href="https://github.com/evo784" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub evo784</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SKILLS ════════════════════════════════════════════ -->
+    <section class="skills-section" id="skills">
+      <div class="section-inner">
+        <h2 class="skills-heading reveal">Ce que je <span class="accent-italic">construis</span>,<br>comment je le construis.</h2>
+        <div class="skills-grid">
+
+          <div class="skill-card reveal delay-1">
+            <div class="skill-card-top">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <h3>Systèmes &<br>Temps Réel</h3>
+            </div>
+            <p>Pipelines haute fréquence, WebSockets, shared memory, architecture event-driven, télémétrie.</p>
+            <ul class="skill-list">
+              <li>Pipeline 60Hz bout-en-bout</li>
+              <li>Streaming WebSocket</li>
+              <li>Data engineering Python</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal delay-2">
+            <div class="skill-card-top">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+              </svg>
+              <h3>Front-end<br>& Web</h3>
+            </div>
+            <p>Sites en production pour de vrais clients. PHP, Craft CMS 5, Twig, vanilla JS — zéro dépendance inutile.</p>
+            <ul class="skill-list">
+              <li>PHP 8.2+ / Craft CMS 5</li>
+              <li>HTML5 / CSS3 / JS vanilla</li>
+              <li>SEO &amp; performance mesurée</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal delay-3">
+            <div class="skill-card-top">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+              <h3>Mise en<br>production</h3>
+            </div>
+            <p>Applications livrées sur domaine réel, vrais utilisateurs, monitoring, optimisation continue.</p>
+            <ul class="skill-list">
+              <li>Déploiement o2switch / Vercel</li>
+              <li>Lighthouse 90+ systématique</li>
+              <li>Git &amp; méthode de travail propre</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ABOUT ══════════════════════════════════════════════ -->
+    <section class="about-section" id="about">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-left">
+            <h2 class="about-heading reveal">Un développeur<br>des <span class="accent-italic">Alpes</span>.</h2>
+            <blockquote class="about-quote reveal delay-1">
+              "Je construis des interfaces et des systèmes comme s'ils allaient durer. Progressif, lentement, honnêtement."
+            </blockquote>
+            <p class="about-text reveal delay-2">
+              20 ans, Bachelor MDS 2ème année. Je travaille sur des pipelines temps réel,
+              du backtesting quantitatif, et des sites livrés en production pour de vrais clients.
+            </p>
+            <p class="about-text reveal delay-3">
+              Passionné de marchés financiers depuis l'âge de 14 ans, de simulation automobile,
+              et de systèmes qui traitent des données à haute fréquence.
+            </p>
+            <div class="about-cta reveal delay-4">
+              <button type="button" class="btn btn-primary" id="contactBtnAbout">Me contacter</button>
+              <a href="https://github.com/evo784" target="_blank" rel="noopener noreferrer" class="btn btn-outline">github.com/evo784</a>
+            </div>
+          </div>
+          <div class="about-right reveal delay-2">
+            <div class="about-card">
+              <div class="about-name">Edwyn Houillier</div>
+              <div class="about-meta-list">
+                <div class="am-row">
+                  <span class="am-key">Formation</span>
+                  <span class="am-val">Bachelor Developer Web</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-key">Année</span>
+                  <span class="am-val">2ème année — 2025/2026</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-key">Localisation</span>
+                  <span class="am-val">Annecy — Remote</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-key">Recherche</span>
+                  <span class="am-val">Alternance 2026</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-key">Stack</span>
+                  <span class="am-val">Python · PHP · JS · SQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROJET PRO ═══════════════════════════════════════════ -->
+    <section class="projet-pro-section" id="projet-pro">
+      <div class="section-inner">
+        <div class="about-grid">
+          <div class="about-left">
+            <h2 class="about-heading reveal">Projet<br><span class="accent-italic">professionnel</span>.</h2>
+            <p class="about-text reveal delay-1">
+              Mon fil conducteur : comprendre comment les systèmes fonctionnent, les construire,
+              et les mettre en production. Depuis mes 14 ans, les marchés financiers m'ont appris
+              à raisonner en données, en risque et en performance. Le code m'a donné les outils
+              pour transformer cette curiosité en projets concrets.
+            </p>
+            <p class="about-text reveal delay-2">
+              Après le Bachelor MDS, je recherche une alternance en développement
+              pour approfondir le backend, les systèmes temps réel et le traitement de données.
+              À terme, je vise des postes où la performance et la fiabilité sont critiques
+              — fintech, IoT industriel, ou infrastructure data.
+            </p>
+          </div>
+          <div class="about-right reveal delay-2">
+            <div class="about-card">
+              <div class="about-name">Objectifs</div>
+              <div class="about-meta-list">
+                <div class="am-row">
+                  <span class="am-key">Court terme</span>
+                  <span class="am-val">Alternance 2026</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-key">Poste visé</span>
+                  <span class="am-val">Dev backend / systèmes</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-key">Domaines</span>
+                  <span class="am-val">Fintech · IoT · Data</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-key">Mobilité</span>
+                  <span class="am-val">Annecy · Genève · Lyon · Remote</span>
+                </div>
+                <div class="am-row">
+                  <span class="am-key">Valeurs</span>
+                  <span class="am-val">Code propre, honnête, maintenable</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROJECTS ═══════════════════════════════════════════ -->
+    <section class="projects-section" id="projects">
+      <div class="section-inner">
+        <h2 class="projects-heading reveal">Projets <span class="accent-italic">sélectionnés</span>.</h2>
+
+        <div class="projects-showcase">
+
+          <!-- Left: project list (static base + dynamic additions) -->
+          <div class="projects-list" id="projects-list">
+
+            <a href="projects/assetto.html" class="project-row active reveal" data-project="assetto" data-static="true">
+              <div class="pr-num">01</div>
+              <div class="pr-body">
+                <h3 class="pr-title">Assetto Corsa Télémétrie</h3>
+                <p class="pr-sub">Pipeline temps réel 60Hz, shared memory → WebSocket → dashboard</p>
+                <div class="pr-tags">
+                  <span>Python</span><span>FastAPI</span><span>WebSockets</span>
+                </div>
+              </div>
+              <div class="pr-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </div>
+            </a>
+
+            <a href="projects/backtester.html" class="project-row reveal delay-1" data-project="backtester" data-static="true">
+              <div class="pr-num">02</div>
+              <div class="pr-body">
+                <h3 class="pr-title">Backtester Quantitatif</h3>
+                <p class="pr-sub">Framework de simulation sur 10 ans de données — 50+ indicateurs</p>
+                <div class="pr-tags">
+                  <span>Python</span><span>Backtrader</span><span>Pandas</span>
+                </div>
+              </div>
+              <div class="pr-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </div>
+            </a>
+
+            <a href="projects/ressourcezvous.html" class="project-row reveal delay-2" data-project="ressourcezvous" data-static="true">
+              <div class="pr-num">03</div>
+              <div class="pr-body">
+                <h3 class="pr-title">Ressourcez-vous</h3>
+                <p class="pr-sub">Craft CMS 5, admin sécurisé from scratch, SEO 95+, en production</p>
+                <div class="pr-tags">
+                  <span>Craft CMS 5</span><span>PHP 8.2</span><span>Twig</span>
+                </div>
+              </div>
+              <div class="pr-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </div>
+            </a>
+
+            <a href="projects/arct.html" class="project-row reveal delay-3" data-project="arct" data-static="true">
+              <div class="pr-num">04</div>
+              <div class="pr-body">
+                <h3 class="pr-title">ARCT — Auto RC Thonon</h3>
+                <p class="pr-sub">Livré en 2 semaines, 9 pages, 0 dépendance runtime, en production</p>
+                <div class="pr-tags">
+                  <span>HTML5/CSS3</span><span>JS vanilla</span><span>PHP</span>
+                </div>
+              </div>
+              <div class="pr-arrow" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </div>
+            </a>
+
+            <!-- Dynamic projects injected here by main.js -->
+
+          </div>
+
+          <!-- Right: browser preview -->
+          <div class="projects-preview reveal delay-2">
+            <div class="preview-frame">
+              <div class="preview-chrome">
+                <div class="chrome-dots">
+                  <span class="dot-r"></span>
+                  <span class="dot-y"></span>
+                  <span class="dot-g"></span>
+                </div>
+                <div class="chrome-url" id="preview-url">localhost:3000/telemetry</div>
+              </div>
+              <div class="preview-viewport">
+
+                <!-- Screen 01: Assetto telemetry dashboard -->
+                <div class="preview-screen active" id="screen-assetto">
+                  <svg viewBox="0 0 580 340" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <rect width="580" height="340" fill="#06060f"/>
+                    <!-- Top bar -->
+                    <rect width="580" height="36" fill="#0d0d1a"/>
+                    <text x="16" y="23" fill="#4e4e62" font-size="9" font-family="JetBrains Mono, monospace" letter-spacing="2">LIVE TELEMETRY</text>
+                    <circle cx="556" cy="18" r="4" fill="#c9a227" opacity="0.9"/>
+                    <text x="530" y="22" fill="#c9a227" font-size="8" font-family="JetBrains Mono, monospace" letter-spacing="1">LIVE</text>
+                    <!-- Metric cards -->
+                    <rect x="16" y="50" width="162" height="72" rx="6" fill="#0d0d1a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    <text x="28" y="70" fill="#4e4e62" font-size="8" font-family="JetBrains Mono, monospace" letter-spacing="2">SPEED</text>
+                    <text x="28" y="104" fill="#e8e8ec" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">240</text>
+                    <text x="100" y="104" fill="#7a7a8e" font-size="11" font-family="JetBrains Mono, monospace">km/h</text>
+                    <rect x="192" y="50" width="162" height="72" rx="6" fill="#0d0d1a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    <text x="204" y="70" fill="#4e4e62" font-size="8" font-family="JetBrains Mono, monospace" letter-spacing="2">RPM</text>
+                    <text x="204" y="104" fill="#e8e8ec" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">6.400</text>
+                    <rect x="368" y="50" width="196" height="72" rx="6" fill="#0d0d1a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    <text x="380" y="70" fill="#4e4e62" font-size="8" font-family="JetBrains Mono, monospace" letter-spacing="2">GEAR</text>
+                    <text x="442" y="108" fill="#c9a227" font-size="38" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+                    <!-- Chart -->
+                    <rect x="16" y="136" width="548" height="184" rx="6" fill="#0d0d1a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    <!-- Grid lines -->
+                    <line x1="16" y1="182" x2="564" y2="182" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+                    <line x1="16" y1="228" x2="564" y2="228" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+                    <line x1="16" y1="275" x2="564" y2="275" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+                    <!-- Legend -->
+                    <rect x="28" y="147" width="6" height="2.5" rx="1" fill="#c9a227"/>
+                    <text x="40" y="151" fill="#7a7a8e" font-size="8" font-family="JetBrains Mono, monospace" letter-spacing="1">THROTTLE</text>
+                    <rect x="110" y="147" width="6" height="2.5" rx="1" fill="#e05555"/>
+                    <text x="122" y="151" fill="#7a7a8e" font-size="8" font-family="JetBrains Mono, monospace" letter-spacing="1">BRAKE</text>
+                    <!-- Throttle line (gold) -->
+                    <polyline points="16,278 56,248 96,218 136,175 176,185 216,168 256,192 296,178 336,188 376,162 416,178 456,192 496,165 536,178 564,168" stroke="#c9a227" stroke-width="2" fill="none"/>
+                    <!-- Throttle area fill -->
+                    <polygon points="16,278 56,248 96,218 136,175 176,185 216,168 256,192 296,178 336,188 376,162 416,178 456,192 496,165 536,178 564,168 564,310 16,310" fill="#c9a227" opacity="0.04"/>
+                    <!-- Brake line (red) -->
+                    <polyline points="16,295 56,295 96,278 136,262 176,295 216,282 256,290 296,295 336,278 376,288 416,295 456,278 496,295 536,288 564,295" stroke="#e05555" stroke-width="1.5" fill="none" opacity="0.7"/>
+                  </svg>
+                </div>
+
+                <!-- Screen 02: Backtester chart -->
+                <div class="preview-screen" id="screen-backtester">
+                  <svg viewBox="0 0 580 340" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                    <rect width="580" height="340" fill="#06060f"/>
+                    <rect width="580" height="36" fill="#0d0d1a"/>
+                    <text x="16" y="23" fill="#4e4e62" font-size="9" font-family="JetBrains Mono, monospace" letter-spacing="2">BACKTEST REPORT — SPY 2014–2024</text>
+                    <!-- Metrics row -->
+                    <rect x="16" y="50" width="118" height="56" rx="6" fill="#0d0d1a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    <text x="26" y="68" fill="#4e4e62" font-size="7.5" font-family="JetBrains Mono, monospace" letter-spacing="1.5">SHARPE</text>
+                    <text x="26" y="95" fill="#c9a227" font-size="24" font-weight="700" font-family="JetBrains Mono, monospace">1.84</text>
+                    <rect x="148" y="50" width="118" height="56" rx="6" fill="#0d0d1a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    <text x="158" y="68" fill="#4e4e62" font-size="7.5" font-family="JetBrains Mono, monospace" letter-spacing="1.5">WIN RATE</text>
+                    <text x="158" y="95" fill="#e8e8ec" font-size="24" font-weight="700" font-family="JetBrains Mono, monospace">67%</text>
+                    <rect x="280" y="50" width="130" height="56" rx="6" fill="#0d0d1a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    <text x="290" y="68" fill="#4e4e62" font-size="7.5" font-family="JetBrains Mono, monospace" letter-spacing="1.5">MAX DD</text>
+                    <text x="290" y="95" fill="#e05555" font-size="24" font-weight="700" font-family="JetBrains Mono, monospace">−12%</text>
+                    <rect x="424" y="50" width="140" height="56" rx="6" fill="#0d0d1a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    <text x="434" y="68" fill="#4e4e62" font-size="7.5" font-family="JetBrains Mono, monospace" letter-spacing="1.5">CAGR</text>
+                    <text x="434" y="95" fill="#e8e8ec" font-size="24" font-weight="700" font-family="JetBrains Mono, monospace">+18%</text>
+                    <!-- Equity chart -->
+                    <rect x="16" y="120" width="548" height="200" rx="6" fill="#0d0d1a" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                    <line x1="60" y1="140" x2="560" y2="140" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+                    <line x1="60" y1="180" x2="560" y2="180" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+                    <line x1="60" y1="220" x2="560" y2="220" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+                    <line x1="60" y1="260" x2="560" y2="260" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+                    <text x="16" y="144" fill="#4e4e62" font-size="7" font-family="JetBrains Mono, monospace">+200%</text>
+                    <text x="16" y="184" fill="#4e4e62" font-size="7" font-family="JetBrains Mono, monospace">+100%</text>
+                    <text x="28" y="224" fill="#4e4e62" font-size="7" font-family="JetBrains Mono, monospace">0%</text>
+                    <text x="24" y="264" fill="#4e4e62" font-size="7" font-family="JetBrains Mono, monospace">−50%</text>
+                    <defs>
+                      <linearGradient id="eg" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#c9a227" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <polygon points="60,220 110,210 160,198 210,205 260,190 310,178 360,165 410,152 460,142 510,133 560,125 560,220 60,220" fill="url(#eg)"/>
+                    <polyline points="60,220 110,210 160,198 210,205 260,190 310,178 360,165 410,152 460,142 510,133 560,125" stroke="#c9a227" stroke-width="2" fill="none"/>
+                    <text x="62" y="308" fill="#4e4e62" font-size="8" font-family="JetBrains Mono, monospace">2014</text>
+                    <text x="162" y="308" fill="#4e4e62" font-size="8" font-family="JetBrains Mono, monospace">2016</text>
+                    <text x="262" y="308" fill="#4e4e62" font-size="8" font-family="JetBrains Mono, monospace">2018</text>
+                    <text x="362" y="308" fill="#4e4e62" font-size="8" font-family="JetBrains Mono, monospace">2020</text>
+                    <text x="462" y="308" fill="#4e4e62" font-size="8" font-family="JetBrains Mono, monospace">2022</text>
+                    <text x="530" y="308" fill="#4e4e62" font-size="8" font-family="JetBrains Mono, monospace">2024</text>
+                  </svg>
+                </div>
+
+                <!-- Screen 03: Ressourcez-vous screenshot -->
+                <div class="preview-screen" id="screen-ressourcezvous">
+                  <img src="assets/ressourcezvous.png" alt="Ressourcez-vous" loading="lazy">
+                </div>
+
+                <!-- Screen 04: ARCT screenshot -->
+                <div class="preview-screen" id="screen-arct">
+                  <img src="assets/arct.png" alt="ARCT Auto RC Thonon" loading="lazy">
+                </div>
+
+              </div>
+            </div>
+
+            <div class="preview-metrics" id="preview-metrics">
+              <span class="metric">60Hz capture</span>
+              <span class="metric">&lt; 15ms latence</span>
+              <span class="metric">14 canaux</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ COMPETENCES ══════════════════════════════════════════ -->
+    <section class="competences-section" id="competences">
+      <div class="section-inner">
+        <h2 class="skills-heading reveal">Synthèse des<br><span class="accent-italic">compétences</span>.</h2>
+        <div class="skills-grid">
+
+          <div class="skill-card reveal delay-1">
+            <div class="skill-card-top">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+              </svg>
+              <h3>Savoir-faire<br>techniques</h3>
+            </div>
+            <ul class="skill-list">
+              <li>Développement backend PHP & Python</li>
+              <li>Intégration frontend HTML/CSS/JS</li>
+              <li>Architecture CMS (Craft CMS 5)</li>
+              <li>Systèmes d'authentification sécurisés</li>
+              <li>Pipelines temps réel (WebSocket)</li>
+              <li>Data processing & visualisation</li>
+              <li>SEO technique & performance web</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal delay-2">
+            <div class="skill-card-top">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+              </svg>
+              <h3>Savoir-faire<br>projet</h3>
+            </div>
+            <ul class="skill-list">
+              <li>Gestion de projet client (cahier des charges → livraison)</li>
+              <li>Déploiement & mise en production (OVH, o2switch)</li>
+              <li>Configuration serveur & DNS</li>
+              <li>Versionning Git</li>
+              <li>Documentation utilisateur (guides, PDF)</li>
+              <li>Adaptation aux contraintes réelles (délais, clients non-tech)</li>
+            </ul>
+          </div>
+
+          <div class="skill-card reveal delay-3">
+            <div class="skill-card-top">
+              <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+              </svg>
+              <h3>Savoir-être</h3>
+            </div>
+            <ul class="skill-list">
+              <li>Autonomie — projets menés de A à Z</li>
+              <li>Communication client — vulgarisation technique</li>
+              <li>Honnêteté — ne pas sur-vendre, documenter le réel</li>
+              <li>Rigueur — sécurité, tests, code maintenable</li>
+              <li>Curiosité — marchés financiers, simulation, systèmes</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ════════════════════════════════════════════ -->
+    <section class="contact-section" id="contact">
+      <div class="section-inner">
+        <h2 class="contact-headline reveal">Construisons<br>quelque chose de <span class="accent-italic">concret</span>.</h2>
+        <p class="contact-sub reveal delay-1">
+          Disponible pour une alternance en développement — systèmes, temps réel, data.
+        </p>
+        <div class="contact-btns reveal delay-2">
+          <button type="button" class="btn btn-primary btn-large" id="contactBtnLarge">Me contacter</button>
+          <a href="https://github.com/evo784" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-large">GitHub evo784</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="mailto:Houillier.edwyn@gmail.com">Houillier.edwyn@gmail.com</a>
+          <span class="divider">—</span>
+          <a href="https://github.com/evo784" target="_blank" rel="noopener noreferrer">GitHub evo784</a>
+        </div>
+        <p class="footer-credit">Edwyn Houillier · 2026</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Contact modal -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" type="button">&times;</button>
+      <h2>Me contacter</h2>
+      <p class="modal-subtitle">Une question ? Un projet ? Envoyez-moi un message.</p>
+      <form id="contactForm" action="https://formsubmit.co/Houillier.edwyn@gmail.com" method="POST">
+        <input type="text" name="_honey" class="form-honey" aria-hidden="true" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="Nouveau message depuis mon portfolio">
+        <input type="hidden" name="_captcha" value="false">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
