@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ARCT — Site vitrine association Auto RC Thonon, livré en 2 semaines, par Edwyn Houillier">
+  <title>ARCT — Association Auto RC Thonon · Edwyn Houillier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="bg-ambient"></div>
+  <div class="grid-overlay"></div>
+
+  <header class="site-header">
+    <a class='header-logo' href='/'>Edwyn<span class="accent">.</span></a>
+    <nav class="header-nav">
+      <a href='/#about'>À propos</a>
+      <a href='/#projects'>Projets</a>
+      <a href='/#contact'>Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- ══ HERO ══ -->
+    <section class="detail-hero">
+      <div class="detail-hero-inner">
+        <div class="detail-nav reveal">
+          <a class='back-link' href='/#projects'>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M19 12H5M12 5l-7 7 7 7"/>
+            </svg>
+            Tous les projets
+          </a>
+        </div>
+        <div class="detail-num reveal">04 — Site client · En production</div>
+        <h1 class="detail-title reveal delay-1">ARCT<br><span style="font-size: 0.55em; opacity: 0.7">Auto RC Thonon</span></h1>
+        <div class="detail-tags reveal delay-2">
+          <span class="detail-tag">HTML5</span>
+          <span class="detail-tag">CSS3</span>
+          <span class="detail-tag">JavaScript vanilla</span>
+          <span class="detail-tag">PHP</span>
+          <span class="detail-tag">o2switch</span>
+          <span class="detail-tag">Livré en 2 semaines</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ APERÇU SITE ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Aperçu</span>
+          <span class="section-rule"></span>
+        </div>
+        <a href="https://autorcthonon.fr" target="_blank" rel="noopener noreferrer" class="site-preview reveal delay-1">
+          <img src="../assets/arct.png" alt="Aperçu du site ARCT" loading="lazy">
+          <div class="site-preview-overlay">
+            <span>Voir autorcthonon.fr</span>
+          </div>
+        </a>
+        <div class="metrics reveal delay-2">
+          <span class="metric">Livré en 2 semaines</span>
+          <span class="metric">9 pages statiques</span>
+          <span class="metric">0 dépendance runtime</span>
+          <span class="metric">SEO complet</span>
+          <span class="metric">En production</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTEXTE ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="detail-2col">
+          <div>
+            <div class="detail-label reveal">Contexte</div>
+            <h2 class="detail-h3 reveal delay-1">Un site nécessaire<br>sous contrainte réelle.</h2>
+          </div>
+          <div>
+            <p class="detail-text reveal delay-1">
+              L'ARCT (Association Auto RC Thonon) avait besoin d'un site web rapidement —
+              pas pour des raisons marketing, mais pour un dossier de demande de terrain auprès de la mairie.
+              Délai court, client non-technique, contrainte administrative concrète.
+            </p>
+            <p class="detail-text reveal delay-2">
+              Stack choisi délibérément minimal : HTML/CSS/JS vanilla + PHP uniquement pour le formulaire de contact.
+              Zéro framework, zéro dépendance runtime. Pas par manque de compétence — par pragmatisme :
+              un bénévole non-dev qui hérite du site dans 2 ans doit pouvoir le modifier sans formation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CE QUI EST BIEN FAIT ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Ce qui est bien fait</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">Simple ne veut pas<br>dire bâclé.</h3>
+            <p class="detail-text reveal delay-2">
+              Sur un site statique, la vraie valeur ajoutée est dans les détails :
+              SEO complet, images optimisées, formulaire sécurisé.
+              Ce sont ces détails qui font la différence entre "ça tourne" et "c'est pro".
+            </p>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">SEO complet sur 9 pages</strong> — balises OG, Twitter cards, URLs canoniques, sitemap.xml, robots.txt</li>
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Optimisation images WebP</strong> — -88% à -95% sur les fichiers les plus lourds sans perte visuelle</li>
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Formulaire PHP sécurisé</strong> — honeypot anti-spam, validation serveur, modale async (pas de rechargement)</li>
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Performance mesurée</strong> — Lighthouse performance 90+ malgré les images photo de voitures RC</li>
+              <li><span class="bullet">&#9656;</span> Design cohérent avec l'identité "racing" de l'association — sobre mais reconnaissable</li>
+              <li><span class="bullet">&#9656;</span> Hébergement o2switch configuré : HTTPS, redirections www, headers sécurité</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FORMULAIRE CONTACT ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Formulaire de contact</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">Anti-spam sans librairie.</h3>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Honeypot</strong> — champ caché CSS, si rempli → le message est silencieusement ignoré</li>
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Validation serveur PHP</strong> — sanitisation des inputs, vérification format email</li>
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Soumission async</strong> — fetch + modale de confirmation, pas de rechargement de page</li>
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Protection headers PHP</strong> — pas d'injection possible dans les en-têtes mail</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STACK ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Stack technique</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-1col">
+          <div class="tech-tags reveal delay-1">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript vanilla</span>
+            <span class="tech-tag">PHP 8+</span>
+            <span class="tech-tag">WebP</span>
+            <span class="tech-tag">o2switch</span>
+          </div>
+          <div class="detail-links reveal delay-2">
+            <a href="https://autorcthonon.fr" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Voir autorcthonon.fr</a>
+            <a href="https://github.com/evo784" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub evo784</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="site-footer">
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href='/'>← Retour au portfolio</a>
+          <span class="divider">—</span>
+          <a href='/projects/assetto'>Premier projet →</a>
+        </div>
+        <p class="footer-credit">Edwyn Houillier · 2026</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../main.js"></script>
+</body>
+</html>

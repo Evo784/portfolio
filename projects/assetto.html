@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Assetto Corsa Télémétrie Live — Pipeline temps réel 60Hz par Edwyn Houillier">
+  <title>Assetto Corsa — Télémétrie Live · Edwyn Houillier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="bg-ambient"></div>
+  <div class="grid-overlay"></div>
+
+  <header class="site-header">
+    <a class='header-logo' href='/'>Edwyn<span class="accent">.</span></a>
+    <nav class="header-nav">
+      <a href='/#about'>À propos</a>
+      <a href='/#projects'>Projets</a>
+      <a href='/#contact'>Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- ══ HERO ══ -->
+    <section class="detail-hero">
+      <div class="detail-hero-inner">
+        <div class="detail-nav reveal">
+          <a class='back-link' href='/#projects'>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M19 12H5M12 5l-7 7 7 7"/>
+            </svg>
+            Tous les projets
+          </a>
+        </div>
+        <div class="detail-num reveal">01 — Systèmes & Temps réel</div>
+        <h1 class="detail-title reveal delay-1">Assetto Corsa<br>Télémétrie Live</h1>
+        <div class="detail-tags reveal delay-2">
+          <span class="detail-tag">Python</span>
+          <span class="detail-tag">FastAPI</span>
+          <span class="detail-tag">WebSockets</span>
+          <span class="detail-tag">Pandas</span>
+          <span class="detail-tag">Streamlit</span>
+          <span class="detail-tag">60Hz pipeline</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ DEMO VIDEO ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Démonstration</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="video-embed reveal delay-1">
+          <iframe
+            src="https://www.youtube.com/embed/7DRf2nB8E_I"
+            title="Assetto Corsa Télémétrie Live — Démonstration"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="metrics reveal delay-2">
+          <span class="metric">60Hz capture</span>
+          <span class="metric">&lt; 15ms latence</span>
+          <span class="metric">14 canaux de données</span>
+          <span class="metric">WebSocket pipeline</span>
+          <span class="metric">Reconnexion auto</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ OVERVIEW ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="detail-2col">
+          <div>
+            <div class="detail-label reveal">Vue d'ensemble</div>
+            <h2 class="detail-h3 reveal delay-1">Pipeline de données<br>à 60 images par seconde.</h2>
+          </div>
+          <div>
+            <p class="detail-text reveal delay-1">
+              Assetto Corsa expose ses données de simulation via une zone de mémoire partagée (shared memory).
+              Ce projet lit ces données à 60Hz en temps réel — vitesse, RPM, G-forces, températures — les transmet
+              via WebSocket, et les affiche dans un dashboard interactif avec moins de 15ms de latence bout en bout.
+            </p>
+            <p class="detail-text reveal delay-2">
+              La motivation est simple : je joue à Assetto Corsa et je voulais voir mes données de conduite en live,
+              comme un vrai pilote avec un ingénieur piste. Le challenge technique était de lire une API non documentée
+              (shared memory layout), parser les données en C via ctypes, et les streamer sans perte vers le frontend.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ARCHITECTURE ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Architecture</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <div class="arch-block reveal delay-1">
+              <div><span class="arch-node">Assetto Corsa</span></div>
+              <div><span class="arch-arrow">↓</span> Shared Memory (Win32)</div>
+              <div><span class="arch-node">Python Reader</span> (ctypes)</div>
+              <div><span class="arch-arrow">↓</span> 60Hz parse &amp; buffer</div>
+              <div><span class="arch-node">FastAPI Server</span></div>
+              <div><span class="arch-arrow">↓</span> WebSocket broadcast</div>
+              <div><span class="arch-node">Streamlit Dashboard</span></div>
+              <div><span class="arch-arrow">↓</span> Charts live + métriques</div>
+            </div>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li><span class="bullet">&#9656;</span> Lecture shared memory via ctypes — pas de SDK, reverse engineering du layout de struct</li>
+              <li><span class="bullet">&#9656;</span> FastAPI avec endpoint WebSocket dédié — un seul canal pour tous les clients</li>
+              <li><span class="bullet">&#9656;</span> Buffer circulaire Python pour absorber les pics sans bloquer le thread de lecture</li>
+              <li><span class="bullet">&#9656;</span> Reconnexion automatique côté client — le dashboard se reconnecte sans intervention</li>
+              <li><span class="bullet">&#9656;</span> Pandas pour l'historique de session — analyses rétrospectives post-course</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ DONNÉES CAPTURÉES ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Données capturées</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">14 canaux<br>en temps réel.</h3>
+            <p class="detail-text reveal delay-2">
+              Chaque donnée de la voiture mise à disposition par le jeu est capturée et exposée.
+            </p>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li><span class="bullet">&#9656;</span> Vitesse (km/h) &amp; RPM moteur</li>
+              <li><span class="bullet">&#9656;</span> Rapport engagé &amp; position pédale de gaz/frein</li>
+              <li><span class="bullet">&#9656;</span> Angle de braquage (volant)</li>
+              <li><span class="bullet">&#9656;</span> G-forces longitudinales, latérales, verticales</li>
+              <li><span class="bullet">&#9656;</span> Températures des 4 pneumatiques</li>
+              <li><span class="bullet">&#9656;</span> Niveau de carburant restant</li>
+              <li><span class="bullet">&#9656;</span> Position sur la piste (coordonnées)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STACK ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Stack technique</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-1col">
+          <div class="tech-tags reveal delay-1">
+            <span class="tech-tag">Python 3.11</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">WebSockets</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">ctypes</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">asyncio</span>
+            <span class="tech-tag">Windows Shared Memory</span>
+          </div>
+          <div class="detail-links">
+            <a href="https://github.com/evo784" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub evo784</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="site-footer">
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href='/'>← Retour au portfolio</a>
+          <span class="divider">—</span>
+          <a href='/projects/backtester'>Projet suivant →</a>
+        </div>
+        <p class="footer-credit">Edwyn Houillier · 2026</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../main.js"></script>
+</body>
+</html>

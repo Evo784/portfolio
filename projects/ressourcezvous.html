@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ressourcez-vous — Site vitrine Craft CMS 5 avec admin panel custom from scratch, par Edwyn Houillier">
+  <title>Ressourcez-vous · Edwyn Houillier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <div class="bg-ambient"></div>
+  <div class="grid-overlay"></div>
+
+  <header class="site-header">
+    <a class='header-logo' href='/'>Edwyn<span class="accent">.</span></a>
+    <nav class="header-nav">
+      <a href='/#about'>À propos</a>
+      <a href='/#projects'>Projets</a>
+      <a href='/#contact'>Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- ══ HERO ══ -->
+    <section class="detail-hero">
+      <div class="detail-hero-inner">
+        <div class="detail-nav reveal">
+          <a class='back-link' href='/#projects'>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M19 12H5M12 5l-7 7 7 7"/>
+            </svg>
+            Tous les projets
+          </a>
+        </div>
+        <div class="detail-num reveal">03 — Site client · En production</div>
+        <h1 class="detail-title reveal delay-1">Ressourcez-vous</h1>
+        <div class="detail-tags reveal delay-2">
+          <span class="detail-tag">PHP 8.2+</span>
+          <span class="detail-tag">Craft CMS 5</span>
+          <span class="detail-tag">Twig</span>
+          <span class="detail-tag">MySQL</span>
+          <span class="detail-tag">Admin custom</span>
+          <span class="detail-tag">SEO 95+</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ APERÇU SITE ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Aperçu</span>
+          <span class="section-rule"></span>
+        </div>
+        <a href="http://fcgxrvo.cluster100.hosting.ovh.net/" target="_blank" rel="noopener noreferrer" class="site-preview reveal delay-1">
+          <img src="../assets/ressourcezvous.png" alt="Aperçu du site Ressourcez-vous" loading="lazy">
+          <div class="site-preview-overlay">
+            <span>Voir le site en production</span>
+          </div>
+        </a>
+        <div class="metrics reveal delay-2">
+          <span class="metric">Score SEO 95+</span>
+          <span class="metric">Chargement &lt; 2s</span>
+          <span class="metric">100% Responsive</span>
+          <span class="metric">Admin panel custom</span>
+          <span class="metric">En production</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ OVERVIEW ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="detail-2col">
+          <div>
+            <div class="detail-label reveal">Vue d'ensemble</div>
+            <h2 class="detail-h3 reveal delay-1">Un site vitrine.<br>Un admin panel<br>from scratch.</h2>
+          </div>
+          <div>
+            <p class="detail-text reveal delay-1">
+              Ressourcez-vous est le site vitrine d'une esthéticienne indépendante.
+              Le besoin : un site professionnel qu'elle gère seule — modifier ses tarifs,
+              ajouter des catégories de prestations, mettre à jour son équipe — sans passer par moi.
+            </p>
+            <p class="detail-text reveal delay-2">
+              Le CMS choisi est <strong style="color: var(--text-primary)">Craft CMS 5</strong> (pas WordPress — admin plus propre,
+              modèles de contenu flexibles, meilleures performances). Mais l'admin natif de Craft est
+              trop technique pour une cliente non-dev. J'ai donc construit un <strong style="color: var(--text-primary)">panel d'administration
+              100% custom</strong> par-dessus, accessible sur <code style="color: var(--accent); font-family: var(--font-mono); font-size: 0.875rem">/gestion</code> — avec son propre
+              design, son propre système d'auth, et une interface pensée pour quelqu'un qui n'est pas développeur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ARCHITECTURE ADMIN ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Architecture du panel admin</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">Module Craft dédié.<br>Pas un plugin.<br>Du code maison.</h3>
+            <p class="detail-text reveal delay-2">
+              L'admin est un <strong style="color: var(--text-primary)">module Craft PHP</strong> (GestionModule) avec un controller dédié
+              (AdminController). Il ne dépend d'aucun plugin du marketplace — chaque fonctionnalité
+              est écrite à la main.
+            </p>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">GestionModule</strong> — module Craft PHP enregistré au bootstrap, intercepte les requêtes sur /gestion
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">AdminController</strong> — controller unique qui gère toutes les actions CRUD + auth + backups
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Templates Twig isolés</strong> — layout admin.twig séparé du site public, avec sa propre sidebar et son design system
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Stockage JSON</strong> — les données métier (prestations, marques, équipe) sont stockées en fichiers JSON, pas en BDD relationnelle — simple, versionnable, backupable
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ AUTH & SÉCURITÉ ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Authentification & sécurité</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">3 couches d'auth.<br>0 librairie tierce.</h3>
+            <p class="detail-text reveal delay-2">
+              Chaque mécanisme de sécurité est implémenté manuellement en PHP natif.
+              L'authentification est vérifiée à 3 niveaux — si un niveau est contourné,
+              les deux autres bloquent.
+            </p>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Defense in depth</strong> — auth vérifiée au niveau Module (EVENT_BEFORE_REQUEST), au niveau Template (admin.twig), et au niveau Controller (requireAuth sur chaque action d'écriture)
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Hachage bcrypt</strong> — password_hash() / password_verify() PHP natif, mot de passe hashé dans le .env
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Tokens CSRF</strong> — chaque formulaire protégé via csrfInput() de Craft
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Rate limiting from scratch</strong> — compteur par IP en fichier JSON, fenêtre glissante de 15 minutes
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Sessions sécurisées</strong> — sliding window 30 min, régénération d'ID après login (anti session-fixation), timer JS côté client
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Reset mot de passe</strong> — tokens hashés SHA-256, expiration 1h, envoi par email
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Upload sécurisé</strong> — validation MIME via finfo PHP natif, limites 2 Mo / 5 Mo selon le type
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CRUD & ROUTES DYNAMIQUES ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">CRUD & routes dynamiques</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">3 sections éditables.<br>Routes auto-générées.</h3>
+            <p class="detail-text reveal delay-2">
+              La cliente a un CRUD complet sur trois types de contenu.
+              Quand elle crée une nouvelle catégorie de prestations,
+              une page publique est automatiquement générée avec sa propre route
+              — sans intervention technique.
+            </p>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Prestations & tarifs</strong> — CRUD sur les catégories, sections et prestations individuelles (nom + durée + prix). Les nouvelles catégories génèrent automatiquement une page sur le site avec leur route et une image hero
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Marques partenaires</strong> — nom + logo (upload image), organisées par catégorie (Soins, Parfums, Enfants)
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Équipe</strong> — nom, poste, spécialité par membre
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Périmètre volontairement limité</strong> — pas d'accès au blog, aux pages légales, au layout ou au CSS. L'interface est simplifiée au strict nécessaire pour une utilisatrice non-technique
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ BACKUPS ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Backups & résilience</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">Backup automatique.<br>Restauration 1 clic.</h3>
+            <p class="detail-text reveal delay-2">
+              Chaque sauvegarde de contenu déclenche un backup JSON automatique.
+              La cliente peut restaurer n'importe quel état précédent sans assistance.
+            </p>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Backup avant chaque sauvegarde</strong> — un snapshot JSON est créé automatiquement pour les prestations, marques et équipe
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Rotation automatique</strong> — les 10 derniers backups par type sont conservés dans storage/backups-admin/, les plus anciens sont supprimés
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Page /gestion/sauvegardes</strong> — interface dédiée pour restaurer ou supprimer manuellement les backups
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Vérification de type</strong> — impossible de restaurer un backup équipe dans les prestations (validation croisée)
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ UX CLIENTE ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">UX pour une utilisatrice non-technique</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">Guide intégré.<br>Zéro jargon.<br>Autonomie totale.</h3>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Guide d'utilisation intégré</strong> — accessible sur /gestion/guide, 7 sections couvrant chaque fonctionnalité + un PDF imprimable
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Reset mot de passe autonome</strong> — réinitialisation par email, sans intervention dev
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Labels clairs, pas de jargon</strong> — l'interface parle le langage de la cliente, pas celui du développeur
+              </li>
+              <li>
+                <span class="bullet">&#9656;</span>
+                <strong style="color: var(--text-primary)">Design system admin dédié</strong> — sidebar de navigation, feedback visuel sur les actions, états de chargement
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SCREENSHOTS ADMIN ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">L'admin en images</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="admin-screenshots">
+          <div class="admin-screenshot-item reveal delay-1">
+            <img src="../assets/admin-marques.png" alt="Admin panel — Gestion des marques partenaires" loading="lazy">
+            <div class="admin-screenshot-caption">Marques partenaires — CRUD par catégorie avec upload logo</div>
+          </div>
+          <div class="admin-screenshot-item reveal delay-2">
+            <img src="../assets/admin-prestations.png" alt="Admin panel — Gestion des prestations et tarifs" loading="lazy">
+            <div class="admin-screenshot-caption">Prestations & tarifs — sections, durées, prix, ajout dynamique</div>
+          </div>
+          <div class="admin-screenshot-item reveal delay-3">
+            <img src="../assets/admin-equipe.png" alt="Admin panel — Gestion de l'équipe" loading="lazy">
+            <div class="admin-screenshot-caption">Équipe — nom, spécialité, avatar auto-généré</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SEO & PERF ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">SEO & Performance</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">Score 95+<br>Google Lighthouse.</h3>
+            <p class="detail-text reveal delay-2">
+              Pour une praticienne qui dépend du référencement local,
+              le SEO n'est pas une option.
+            </p>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li><span class="bullet">&#9656;</span> Balises meta optimisées : title, description, OG, Twitter cards</li>
+              <li><span class="bullet">&#9656;</span> Données structurées JSON-LD — schema LocalBusiness</li>
+              <li><span class="bullet">&#9656;</span> Sitemap.xml auto-généré, images WebP avec fallback, lazy loading</li>
+              <li><span class="bullet">&#9656;</span> CSS/JS minifiés, 0 dépendance inutile — chargement &lt; 2s</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ DÉPLOIEMENT ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Déploiement</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">Mis en production<br>sur OVH mutualisé.</h3>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Configuration serveur</strong> — PHP 8.2+ sur OVH, export/import MySQL, structure www/ séparée des sources</li>
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Headers de sécurité</strong> — CSP, X-Frame-Options, HSTS configurés dans .htaccess</li>
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">Compatibilité PHP</strong> — adaptations pour PHP 8.2 (platform_check.php, filtres Twig)</li>
+              <li><span class="bullet">&#9656;</span> <strong style="color: var(--text-primary)">DNS & SSL</strong> — transfert de domaine en cours, Let's Encrypt prévu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STACK ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Stack technique</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-1col">
+          <div class="tech-tags reveal delay-1">
+            <span class="tech-tag">PHP 8.2+</span>
+            <span class="tech-tag">Craft CMS 5</span>
+            <span class="tech-tag">Twig</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Composer</span>
+            <span class="tech-tag">bcrypt</span>
+            <span class="tech-tag">JSON storage</span>
+            <span class="tech-tag">OVH</span>
+          </div>
+          <div class="detail-links reveal delay-2">
+            <a href="http://fcgxrvo.cluster100.hosting.ovh.net/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Voir le site</a>
+            <a href="https://github.com/evo784" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub evo784</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="site-footer">
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href='/'>← Retour au portfolio</a>
+          <span class="divider">—</span>
+          <a href='/projects/arct'>Projet suivant →</a>
+        </div>
+        <p class="footer-credit">Edwyn Houillier · 2026</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../main.js"></script>
+</body>
+</html>
