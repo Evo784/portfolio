@@ -924,6 +924,16 @@ body::after {
   display: block;
 }
 
+.preview-screen iframe {
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: top left;
+  border: none;
+  pointer-events: none;
+  display: block;
+}
+
 .preview-screen svg {
   width: 100%;
   height: 100%;
