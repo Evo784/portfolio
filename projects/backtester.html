@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Backtester Quantitatif — Framework de simulation sur données historiques par Edwyn Houillier">
-  <title>Backtester Quantitatif · Edwyn Houillier</title>
+  <meta name="description" content="Learning Lab — Plateforme quantitative full-stack : moteur de backtesting vectorisé maison, FastAPI, Next.js 16, 125 tests. Par Edwyn Houillier.">
+  <title>Learning Lab · Edwyn Houillier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -36,15 +36,16 @@
             Tous les projets
           </a>
         </div>
-        <div class="detail-num reveal">02 — Data & Finance</div>
-        <h1 class="detail-title reveal delay-1">Backtester<br>Quantitatif</h1>
+        <div class="detail-num reveal">02 — Fintech · Full-stack</div>
+        <h1 class="detail-title reveal delay-1">Learning<br>Lab</h1>
         <div class="detail-tags reveal delay-2">
           <span class="detail-tag">Python</span>
-          <span class="detail-tag">Backtrader</span>
+          <span class="detail-tag">FastAPI</span>
+          <span class="detail-tag">Next.js 16</span>
+          <span class="detail-tag">TypeScript</span>
           <span class="detail-tag">Pandas</span>
           <span class="detail-tag">NumPy</span>
-          <span class="detail-tag">Matplotlib</span>
-          <span class="detail-tag">yfinance</span>
+          <span class="detail-tag">React 19</span>
         </div>
       </div>
     </section>
@@ -55,29 +56,30 @@
         <div class="detail-2col">
           <div>
             <div class="detail-label reveal">Vue d'ensemble</div>
-            <h2 class="detail-h3 reveal delay-1">10 ans de données.<br>50+ indicateurs.<br>Une seule question.</h2>
+            <h2 class="detail-h3 reveal delay-1">Deux produits.<br>Un core Python.<br>125 tests.</h2>
           </div>
           <div>
             <p class="detail-text reveal delay-1">
-              Depuis mes 14 ans je m'intéresse aux marchés financiers — taux d'intérêt, marché obligataire,
-              comportement des actifs sur longue période. Ce framework est né de cette curiosité :
-              pouvoir tester une stratégie de trading sur des données historiques réelles et mesurer
-              objectivement si elle aurait été rentable.
+              Depuis mes 14 ans je m'intéresse aux marchés financiers. Learning Lab est né de là :
+              une plateforme full-stack en deux faces — <strong>Quant</strong> pour tester des stratégies
+              de trading (backtest, walk-forward, optimisation), et <strong>Invest</strong> pour
+              simuler la gestion d'une épargne (DCA, allocation multi-assets, Monte Carlo).
             </p>
             <p class="detail-text reveal delay-2">
-              Le moteur utilise Backtrader, une librairie Python mature, enrichi d'un layer custom
-              pour l'import de données (yfinance), la définition de stratégies modulaires,
-              et la génération de rapports visuels détaillés avec Matplotlib.
+              Le moteur de backtesting est entièrement maison — aucune dépendance à Backtrader ou vectorbt.
+              Les indicateurs sont également implémentés en interne. Ce choix délibéré permet de montrer
+              la maîtrise des outils plutôt que leur utilisation, et donne un contrôle total sur chaque
+              calcul de la simulation.
             </p>
           </div>
         </div>
         <div class="metrics reveal delay-3">
-          <span class="metric">10 ans de données historiques</span>
-          <span class="metric">50+ indicateurs techniques</span>
-          <span class="metric">Sharpe ratio</span>
-          <span class="metric">Drawdown max</span>
-          <span class="metric">Win rate</span>
-          <span class="metric">Profit factor</span>
+          <span class="metric">125 tests · 0 flake</span>
+          <span class="metric">16 stratégies</span>
+          <span class="metric">2 providers de données</span>
+          <span class="metric">Moteur vectorisé maison</span>
+          <span class="metric">Walk-forward + IS/OOS</span>
+          <span class="metric">Grid search + heatmaps</span>
         </div>
       </div>
     </section>
@@ -92,56 +94,81 @@
         <div class="detail-2col">
           <div>
             <div class="arch-block reveal delay-1">
-              <div><span class="arch-node">yfinance</span></div>
-              <div><span class="arch-arrow">↓</span> OHLCV data (10 ans)</div>
-              <div><span class="arch-node">Data Feed</span> (Backtrader)</div>
-              <div><span class="arch-arrow">↓</span> Chargement + normalisation</div>
-              <div><span class="arch-node">Strategy Class</span></div>
-              <div><span class="arch-arrow">↓</span> Signaux buy/sell</div>
-              <div><span class="arch-node">Cerebro Engine</span></div>
-              <div><span class="arch-arrow">↓</span> Simulation tick-by-tick</div>
-              <div><span class="arch-node">Analyzers</span></div>
-              <div><span class="arch-arrow">↓</span> Métriques de performance</div>
-              <div><span class="arch-node">Matplotlib Reports</span></div>
+              <div><span class="arch-node">web/ — Next.js 16 + React 19</span></div>
+              <div><span class="arch-arrow">↓</span> TanStack Query (SSR prefetch)</div>
+              <div><span class="arch-node">api/ — FastAPI + Pydantic</span></div>
+              <div><span class="arch-arrow">↓</span> Routes typées, response_model strict</div>
+              <div><span class="arch-node">core/ — Python pur</span></div>
+              <div><span class="arch-arrow">↓</span> engine · indicators · metrics</div>
+              <div><span class="arch-node">portfolio · data · strategies</span></div>
+              <div><span class="arch-arrow">↓</span> Binance API + yfinance + cache Parquet</div>
+              <div><span class="arch-node">OHLCV data (crypto + ETF + indices)</span></div>
             </div>
           </div>
           <div>
             <ul class="highlights reveal delay-1">
-              <li><span class="bullet">&#9656;</span> Architecture modulaire — chaque stratégie est une classe Python indépendante, facile à brancher</li>
-              <li><span class="bullet">&#9656;</span> Indicateurs custom implémentables via l'API Backtrader (on top des 50+ natifs)</li>
-              <li><span class="bullet">&#9656;</span> Slippage et frais de transaction paramétrables pour coller au réel</li>
-              <li><span class="bullet">&#9656;</span> Walk-forward testing possible — éviter l'overfitting sur la période de test</li>
-              <li><span class="bullet">&#9656;</span> Rapports Matplotlib exportables : courbe d'equity, trades annotés, distribution des gains</li>
+              <li><span class="bullet">&#9656;</span> <strong>core/ pur-Python</strong> — zéro import FastAPI ou UI. Testable en isolation totale.</li>
+              <li><span class="bullet">&#9656;</span> <strong>Moteur vectorisé</strong> — signaux et frais précomputés en arrays NumPy, ~60 000× plus rapide qu'une boucle naïve. Une seule boucle autorisée : la machine d'états (flat/long/short).</li>
+              <li><span class="bullet">&#9656;</span> <strong>Walk-forward</strong> — découpage en N fenêtres glissantes, ratio de robustesse OOS/IS pour détecter l'overfitting.</li>
+              <li><span class="bullet">&#9656;</span> <strong>Grid search</strong> — jusqu'à 2 axes de paramètres, 500 combinaisons max, résultats en heatmap Sharpe/drawdown.</li>
+              <li><span class="bullet">&#9656;</span> <strong>Data router</strong> — détecte automatiquement le provider (Binance pour BTCUSDT, yfinance pour SPY, MC.PA, GC=F…), cache Parquet keyed sur MD5.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══ MÉTRIQUES ══ -->
+    <!-- ══ DUAL FACE ══ -->
     <section class="detail-section">
       <div class="detail-inner">
         <div class="section-label reveal">
-          <span class="section-num">Métriques calculées</span>
+          <span class="section-num">Quant vs Invest</span>
           <span class="section-rule"></span>
         </div>
         <div class="detail-2col">
           <div>
-            <h3 class="detail-h3 reveal delay-1">Mesurer, pas juste simuler.</h3>
+            <h3 class="detail-h3 reveal delay-1">Même core.<br>Deux questions différentes.</h3>
             <p class="detail-text reveal delay-2">
-              Le backtesting sans métriques rigoureuses ne sert à rien.
-              Le framework calcule les indicateurs de performance standards
-              utilisés par les fonds quantitatifs.
+              La séparation n'est pas cosmétique : les deux faces posent des questions fondamentalement
+              différentes, s'adressent à des profils différents, et appellent des interfaces différentes.
+              Mais elles partagent le même moteur Python — aucune duplication de logique.
             </p>
           </div>
           <div>
             <ul class="highlights reveal delay-1">
-              <li><span class="bullet">&#9656;</span> <strong>Sharpe ratio</strong> — rendement ajusté au risque</li>
-              <li><span class="bullet">&#9656;</span> <strong>Drawdown maximum</strong> — pire perte depuis un pic</li>
-              <li><span class="bullet">&#9656;</span> <strong>Win rate</strong> — pourcentage de trades gagnants</li>
-              <li><span class="bullet">&#9656;</span> <strong>Profit factor</strong> — ratio gains bruts / pertes brutes</li>
-              <li><span class="bullet">&#9656;</span> <strong>CAGR</strong> — taux de croissance annualisé</li>
-              <li><span class="bullet">&#9656;</span> <strong>Trades log</strong> — historique complet avec P&amp;L par trade</li>
+              <li><span class="bullet">&#9656;</span> <strong>Face Quant</strong> — "Est-ce que ma stratégie fonctionne ?" Backtest + walk-forward + heatmaps, 16 stratégies pré-câblées (MA Cross, Supertrend, Ichimoku, RSI, Bollinger, VWAP…), données Binance.</li>
+              <li><span class="bullet">&#9656;</span> <strong>Face Invest</strong> — "Comment gérer mon épargne ?" Simulateur DCA, constructeur d'allocation (60/40, 3-fund, crypto-heavy), projection Monte Carlo (Gaussienne + Bootstrap), multi-assets via yfinance.</li>
+              <li><span class="bullet">&#9656;</span> Routes séparées : <code>/invest/{allocation,dca,projection}</code> vs <code>/backtest</code>, <code>/walkforward</code>, <code>/optimize</code>.</li>
+              <li><span class="bullet">&#9656;</span> Pages Next.js séparées : <code>app/invest/</code> vs <code>app/quant/</code>. Zéro feature creep entre les deux.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TESTS ══ -->
+    <section class="detail-section">
+      <div class="detail-inner">
+        <div class="section-label reveal">
+          <span class="section-num">Qualité & tests</span>
+          <span class="section-rule"></span>
+        </div>
+        <div class="detail-2col">
+          <div>
+            <h3 class="detail-h3 reveal delay-1">125 tests.<br>4,75 secondes.<br>Zéro flake.</h3>
+            <p class="detail-text reveal delay-2">
+              Chaque phase du projet a produit de nouveaux modules, et chaque module a ses tests avant
+              de passer à la suivante. Ce n'est pas du happy-path : les cas limites de la machine d'états,
+              les calculs de Sharpe annualisé, les indices IS/OOS exacts, la validation Pydantic côté API.
+            </p>
+          </div>
+          <div>
+            <ul class="highlights reveal delay-1">
+              <li><span class="bullet">&#9656;</span> <strong>17 tests</strong> — moteur backtest, indicateurs, métriques (Sharpe, Sortino, Calmar, max DD)</li>
+              <li><span class="bullet">&#9656;</span> <strong>37 tests</strong> — portfolio Invest : allocation, DCA, projection Monte Carlo</li>
+              <li><span class="bullet">&#9656;</span> <strong>19 tests</strong> — walk-forward : fenêtrage glissant, ratio de robustesse</li>
+              <li><span class="bullet">&#9656;</span> <strong>21 tests</strong> — grid search : combinatoires, garde-fou 500 combos, API routes</li>
+              <li><span class="bullet">&#9656;</span> TypeScript strict côté frontend — zéro <code>any</code> sans justification explicite</li>
             </ul>
           </div>
         </div>
@@ -157,17 +184,27 @@
         </div>
         <div class="detail-1col">
           <div class="tech-tags reveal delay-1">
-            <span class="tech-tag">Python 3.11</span>
-            <span class="tech-tag">Backtrader</span>
+            <span class="tech-tag">Python 3.13</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Pydantic</span>
             <span class="tech-tag">Pandas</span>
             <span class="tech-tag">NumPy</span>
-            <span class="tech-tag">Matplotlib</span>
+            <span class="tech-tag">PyArrow</span>
             <span class="tech-tag">yfinance</span>
-            <span class="tech-tag">ta-lib</span>
+            <span class="tech-tag">Binance API</span>
+            <span class="tech-tag">pytest</span>
+            <span class="tech-tag">Next.js 16</span>
+            <span class="tech-tag">React 19</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">TanStack Query</span>
+            <span class="tech-tag">Lightweight Charts</span>
+            <span class="tech-tag">Recharts</span>
+            <span class="tech-tag">Zod</span>
+            <span class="tech-tag">Tailwind CSS 4</span>
           </div>
           <div class="detail-links reveal delay-2">
             <a href="https://github.com/evo784" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub evo784</a>
-            <span class="no-link">Mise en ligne prévue</span>
+            <span class="no-link">Déploiement en cours</span>
           </div>
         </div>
       </div>
